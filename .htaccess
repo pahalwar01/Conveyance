@@ -1,4 +1,0 @@
-### re-direct index.html to root /
-###rewriteCond %{THE_REQUEST} ^.*/index.html
-HTTP/
-RewriteRule ^(.*)index.php$ /$1 [R=301,L]
