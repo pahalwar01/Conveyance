@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+</head>
+<body>
+    <!--header coding start-->
+    <div class="row">
+        <header class="col-12">
+            <div>
+                <img src="../../img/logo.png" alt="logo" id="logo">
+            </div>
+            
+            <h2><center style="height: 50px; text-align: center; color: red;"><span id="profile_name"></span></center></h2>
+            
+        </header>    
+    </div>
+    <!--header coding end-->
+
+    <!--Navigation coding start-->
+    <div class="row">
+        <nav class="col-12">
+            <ul>
+                <li class="col-4"><a href="user_1.html"><i class="fas fa-home"></i> Home</a></li>
+                <li class="col-4" id="jobview"><a href="apps/works/works.html"><i class="fas fa-list"></i> Jobs View</a></li>
+                <li class="col-4" id="logout"><a href="#"><p id="logout_text"><i class="fa-solid fa-right-from-bracket"></i> Logout </p></a></li>
+            </ul>
+            
+        </nav>
+    </div>
+    <!--Navigation coding end-->
+
+    <section>
+
+        <div class="row">
+            <center>
+                <h2 align ="center" style="height: 50px; text-align: center; color: red;">Your Ride Details <span id="riderdetails"></span></h2>
+                    <br>
+                    <h4>View Section</h4><br>
+                    <!-- users view panel -->
+                    <div id="dharampal_details" style="display: none;">
+                        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pubhtml?gid=686236904&amp;single=true&amp;widget=true&amp;headers=false" style="width: 230px; height: 200px;"></iframe>
+                    </div>
+                    <div id="karan_details" style="display: none;">
+                        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pubhtml?gid=1269359666&amp;single=true&amp;widget=true&amp;headers=false" style="width: 230px; height: 200px;"></iframe>
+                    </div>
+                    <div id="lalit_details" style="display: none;">
+                        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pubhtml?gid=1767430356&amp;single=true&amp;widget=true&amp;headers=false" style="width: 230px; height: 200px;"></iframe>
+                    </div>
+                    <!-- admin view panel -->
+                    <div id="admin" style="display: none;">
+                        <div>
+                            <div>
+                                <p style="float: left;">Select Rider</p>
+                                <select name="rider" id="">
+                                    <option value="dharampal">Dharampal</option>
+                                    <option value="karan">Karan</option>
+                                    <option value="lalit">Lalit</option>
+                                </select>
+                            </div><br>
+                            <p style="float: left;">Select Month</p>
+                            <select name="month" id="month" style="width: 100px;">
+                                <option value="Jan" id="jan">January</option>
+                                <option value="Feb" id="feb">February</option>
+                                <option value="Mar" id="mar">March</option>
+                                <option value="Apr" id="apr">April</option>
+                                <option value="May" id="may">May</option>
+                                <option value="June" id="jun">June</option>
+                                <option value="July" id="jul">July</option>
+                                <option value="Aug" id="aug">August</option>
+                                <option value="Sep" id="sep">September</option>
+                                <option value="Oct" id="oct">October</option>
+                                <option value="Nov" id="nov">November</option>
+                                <option value="Dec" id="dec">December</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div>
+                            <p style="float: left;">Select Year</p>
+                            <select name="year" id="year" style="width: 100px;">
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            </select>
+                        </div><br><br>
+                        <div>
+                            <button style="height: 30px; width: 80px; color: red; background-color: yellow;" id="show">Show</button>
+                            <button style="height: 30px; width: 80px; color: red; background-color: yellow;" id="print">Print</button>
+                        </div>
+                        <br><br>
+                        <div id="listview" style="height: 200px; width: 500px; background-color: blue; display: none;"></div>
+                    </div>
+                <br><br>
+                <hr style="color: red;border-style: dashed; border-width: 2px;"><hr>
+                <br>
+                        
+            </center>
+            <br><br><br>
+        </div>
+        
+    </section>
+
+
+<script type="module">
+  
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+   
+  
+    import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+    
+   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDXIbUIbKYmKVPUtfrzCPAxLb2t4r_Jlww",
+    authDomain: "account-f83b4.firebaseapp.com",
+    databaseURL: "https://account-f83b4-default-rtdb.firebaseio.com",
+    projectId: "account-f83b4",
+    storageBucket: "account-f83b4.appspot.com",
+    messagingSenderId: "374695878902",
+    appId: "1:374695878902:web:72ea054fbd780f98650cd7",
+    measurementId: "G-D0XY2VX61J"
+  };
+  
+  
+  
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider()
+  
+    const signInButton = document.getElementById("signInButton");
+    const signOutButton = document.getElementById("logout");
+    const message = document.getElementById("message");
+    const userName = document.getElementById("profile_name");
+    const userEmail = document.getElementById("userEmail");
+    const riderdetails = document.getElementById("riderdetails");
+    const dharampal = document.getElementById("dharampal_details");
+    const karan = document.getElementById("karan_details");
+    const lalit = document.getElementById("lalit_details");
+    const admin = document.getElementById("admin");
+    const jobview = document.getElementById("jobview");
+    const logout = document.getElementById("logout");
+    
+    // signOutButton.style.display = "none";
+    // message.style.display = "none";
+  
+    const userSignIn = async() => {
+      signInWithPopup(auth, provider)
+      .then((result) => {
+          const user = result.user
+          console.log(user);
+      }).catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message
+      })
+    }
+  
+    const userSignOut = async() => {
+      signOut(auth).then(() => {
+          alert("You have signed out successfully!");
+          location.href = "../../index.html";
+          sessionStorage.clear();
+      }).catch((error) => {})
+    }
+  
+    onAuthStateChanged(auth, (user) => {
+      if(user) {
+        signOutButton.style.display = "block";
+        // message.style.display = "block";
+        riderdetails.innerHTML = user.displayName;
+        userName.innerHTML = user.displayName;
+        if(userName.innerHTML == "Dharampal"){
+                dharampal.style.display = "block";
+            }
+            else{
+                if(userName.innerHTML == "Mirchi Tasks"){
+                    karan.style.display = "block";
+                }
+                else{
+                    if(userName.innerHTML == "Happykart"){
+                    lalit.style.display = "block";
+                    }
+                    else{
+                        if(userName.innerHTML == "Rohit kumar"){
+                            admin.style.display = "block";
+                            jobview.style.display="none";
+                            logout.style.float="right";
+                        }
+                    }
+                }
+            }
+
+
+        userEmail.innerHTML = user.email;
+        
+        
+
+        // location.href = "users/user_1/user_1.html";
+        // location.href = "../../index.html";
+      } else {
+        location.href = "../../index.html";
+        signOutButton.style.display = "none";
+        message.style.display = "none";
+      }
+    })
+
+
+
+    
+
+
+
+
+    signOutButton.addEventListener('click', userSignOut);
+  
+
+  </script>
+
+<script src="js/java.js"></script>
+<!-- <script src="../../java/googlesignin.js"></script> -->
+</body>
+</html>

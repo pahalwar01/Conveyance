@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    background: rgb(127,0,255);    
+}
+#loginpage{
+    display: flex;
+    justify-content: center;
+    margin-top: 250px;
+    height: 100px;
+}
+
+#signInButton{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    font-size: 15px;
+    background: #7F00FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E100FF, #7F00FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+    font-family: 'Ubuntu',sans-serif;
+    outline: none;
+    cursor: pointer;
+    margin-top: 30px;
+}
