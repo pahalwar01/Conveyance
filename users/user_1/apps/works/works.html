@@ -1,9 +1,3 @@
-<?php
-include("connection.php");
-error_reporting(0);
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -210,27 +204,3 @@ error_reporting(0);
 
 </body>
 </html>
-
-<?php
-
-$rn=$_GET['rname'];
-$sn=$_GET['sender'];
-$dt=$_GET['date'];
-$wrk=$_GET['work'];
-$frm=$_GET['from'];
-$to=$_GET['to'];
-$km=$_GET['km'];
-
-$query = "INSERT INTO RIDES VALUES ('$rn','$sn','$dt','$wrk','$frm','$to','$km')";
-$data = mysqli_query($conn,$query);
-
-if($data)
-{
-    echo "Data inserted into Database";
-}
-else
-{
-    echo "Failed to insert into Database";
-}
-
-?>
