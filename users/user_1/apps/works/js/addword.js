@@ -28,10 +28,10 @@ var redirect_page = document.getElementById("jobs_bg");
             })
     .catch(error => console.error('Error!', error.message))
     })
-    // submit_btn.onclick = function(){
-    //     submit_btn.style.display="none";
-    //     close_btn.style.display="none";
-    // }
+    submit_btn.onclick = function(){
+        submit_btn.style.display="none";
+        close_btn.style.display="none";
+    }
 
 
     
