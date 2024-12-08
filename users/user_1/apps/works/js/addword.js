@@ -12,7 +12,7 @@ var redirect_page = document.getElementById("jobs_bg");
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
     .then(response => {
         success.innerHTML="Data Successfully Submited";
-
+        
         setTimeout(function()
         {
             success.innerHTML="";
@@ -26,19 +26,16 @@ var redirect_page = document.getElementById("jobs_bg");
                 setInterval('autoRefresh()', 100);
         
             })
-            submit_btn.onclick = function(){
-                submit_btn.style.display="none";
-                close_btn.style.display="block";
-            }
     .catch(error => console.error('Error!', error.message))
     })
+    // submit_btn.onclick = function(){
+    //     submit_btn.style.display="none";
+    //     close_btn.style.display="none";
+    // }
 
 
     
 
 // submit to google sheet end
-
-
-// data store in acccess database
 
 
