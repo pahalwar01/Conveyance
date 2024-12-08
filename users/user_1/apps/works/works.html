@@ -1,3 +1,9 @@
+<?php
+include("connection.php");
+error_reporting(0);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -186,12 +192,45 @@
 
     signOutButton.addEventListener('click', userSignOut);
     
+
+    var close = document.getElementById("close_btn");
+    var add_job = document.getElementById("add_job");
+    close.onclick = function()
+    {
+        window.location.replace("works.php");
+    }
+
+
+
 </script>
     
 
-<!-- <script src="js/works.js"></script>
-<script type="module" src="js/addword.js"></script> -->
-    
+<script src="js/works.js"></script>
+<script type="module" src="js/addword.js"></script>     
 
 </body>
 </html>
+
+<?php
+
+$rn=$_GET['rname'];
+$sn=$_GET['sender'];
+$dt=$_GET['date'];
+$wrk=$_GET['work'];
+$frm=$_GET['from'];
+$to=$_GET['to'];
+$km=$_GET['km'];
+
+$query = "INSERT INTO RIDES VALUES ('$rn','$sn','$dt','$wrk','$frm','$to','$km')";
+$data = mysqli_query($conn,$query);
+
+if($data)
+{
+    echo "Data inserted into Database";
+}
+else
+{
+    echo "Failed to insert into Database";
+}
+
+?>
