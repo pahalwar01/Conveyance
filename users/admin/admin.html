@@ -31,9 +31,9 @@
     <div class="row">
         <nav class="col-12">
             <ul>
-                <li class="col-4"><a href="user_1.html"><i class="fas fa-home"></i> Home</a></li>
+                <li class="col-6"><a href="../admin/admin.html"><i class="fas fa-home"></i> Home</a></li>
                 <!-- <li class="col-4"><a href="apps/works/works.html"><i class="fas fa-list"></i> Print Section</a></li> -->
-                <li class="col-4" id="logout"><a href="#"><p id="logout_text"><i class="fa-solid fa-right-from-bracket"></i> Logout </p></a></li>
+                <li class="col-6" id="logout"><a href="#"><p id="logout_text"><i class="fa-solid fa-right-from-bracket"></i> Logout </p></a></li>
             </ul>
             
         </nav>
@@ -48,13 +48,18 @@
                         <h4>View Section</h4><br>
                         <div id="dharampal_details">
                             <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pubhtml?gid=686236904&amp;single=true&amp;widget=true&amp;headers=false" style="width: 230px; height: 200px;"></iframe>
-                        </div>
+                            <br>
+                            <button id="djobprint">Print</button>
+                        </div><br><br>
                         <div id="karan_details">
                             <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pubhtml?gid=1269359666&amp;single=true&amp;widget=true&amp;headers=false" style="width: 230px; height: 200px;"></iframe>
-                            <button id="kjobview">Print</button>
-                        </div>
+                            <br>
+                            <button id="kjobprint">Print</button>
+                        </div><br><br>
                         <div id="lalit_details">
                             <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pubhtml?gid=1767430356&amp;single=true&amp;widget=true&amp;headers=false" style="width: 230px; height: 200px;"></iframe>
+                            <br>
+                            <button id="ljobprint">Print</button>
                         </div>
                     <br><br>
                     <hr style="color: red;border-style: dashed; border-width: 2px;"><hr>
@@ -112,11 +117,23 @@
     </section>
 
     <script>
-        var kprint = document.getElementById("kjobview");
-        kprint.click = function(){
-            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pubhtml?gid=377967874&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+        var karan = document.getElementById("kjobprint")
+        var lalit = document.getElementById("ljobprint")
+        var dharampal = document.getElementById("djobprint")
+        karan.onclick=function()
+        {
+            window.location.href = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pub?gid=441368016&single=true&output=pdf";
+        }
+        lalit.onclick=function()
+        {
+            window.location.href = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pub?gid=1803733186&single=true&output=pdf";
+        }
+        dharampal.onclick=function()
+        {
+            window.location.href = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pub?gid=377967874&single=true&output=pdf";
         }
     </script>
+
 
 <!-- <script type="module">
   
