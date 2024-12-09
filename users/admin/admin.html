@@ -196,7 +196,7 @@
         // message.style.display = "block";
         riderdetails.innerHTML = user.displayName;
         userName.innerHTML = user.displayName;
-        if(userName.innerHTML == "Rohit kumar"){
+        if(userName.innerHTML == "Dharampal"){
                 dharampal.style.display = "block";
             }
             else{
@@ -206,10 +206,23 @@
                 else{
                     if(userName.innerHTML == "Happykart"){
                     lalit.style.display = "block";
-                };
+                    }
+                    else{
+                        if(userName.innerHTML == "Rohit kumar"){
+                            // admin.style.display = "block";
+                            location.href=("../admin/admin.html")
+                            jobview.style.display="none";
+                            logout.style.float="right";
+                        }
+                    }
                 }
             }
+
+
         userEmail.innerHTML = user.email;
+        
+        
+
         // location.href = "users/user_1/user_1.html";
         // location.href = "../../index.html";
       } else {
@@ -218,6 +231,7 @@
         message.style.display = "none";
       }
     })
+
 
     signOutButton.addEventListener('click', userSignOut);
   
