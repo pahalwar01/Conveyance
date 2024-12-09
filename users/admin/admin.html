@@ -168,10 +168,13 @@
             userEmail.innerHTML = user.email;
             
             } 
+            else{
+                location.href = "../../index.html";
+                signOutButton.style.display = "none";
+                message.style.display = "none";
+            }
         }
     })
-
-
 
 
     signOutButton.addEventListener('click', userSignOut);
