@@ -33,7 +33,7 @@
         <nav class="col-12">
             <ul>
                 <li class="col-4"><a href="user_1.html"><i class="fas fa-home"></i> Home</a></li>
-                <li class="col-4" id="jobview"><a href="apps/works/works.html"><i class="fas fa-list"></i> Jobs View</a></li>
+                <li class="col-4" id="jobview"><a href="apps/works/works.php"><i class="fas fa-list"></i> Jobs View</a></li>
                 <li class="col-4" id="logout"><a href="#"><p id="logout_text"><i class="fa-solid fa-right-from-bracket"></i> Logout </p></a></li>
             </ul>
             
@@ -159,7 +159,7 @@ include '../../connection.php';
     const userSignOut = async() => {
       signOut(auth).then(() => {
           alert("You have signed out successfully!");
-          location.href = "../../index.html";
+          location.href = "../../index.php";
           sessionStorage.clear();
       }).catch((error) => {})
     }
@@ -195,13 +195,9 @@ include '../../connection.php';
 
 
         userEmail.innerHTML = user.email;
-        
-        
-
-        // location.href = "users/user_1/user_1.html";
-        // location.href = "../../index.html";
-      } else {
-        location.href = "../../index.html";
+      }
+      else {
+        location.href = "../../index.php";
         signOutButton.style.display = "none";
         message.style.display = "none";
       }
