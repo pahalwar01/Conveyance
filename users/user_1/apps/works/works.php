@@ -91,6 +91,10 @@
 
     <!--section coding end-->
 
+<?php
+include '../../../../connection.php';
+?>
+
 <script type="module">
 
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
@@ -143,7 +147,7 @@
     const userSignOut = async() => {
         signOut(auth).then(() => {
             alert("You have signed out successfully!");
-            location.href = "../../../../index.html";
+            location.href = "../../../../index.php";
             sessionStorage.clear();
         }).catch((error) => {})
     }
@@ -177,7 +181,7 @@
         // location.href = "../../index.html";
         } 
         else {
-        location.href = "../../../../index.html";
+        location.href = "../../../../index.php";
         signOutButton.style.display = "none";
         message.style.display = "none";
         }
@@ -192,7 +196,7 @@
     var add_job = document.getElementById("add_job");
     close.onclick = function()
     {
-        window.location.replace("works.html");
+        window.location.replace("works.php");
     }
 
 
