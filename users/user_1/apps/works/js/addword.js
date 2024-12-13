@@ -18,7 +18,7 @@ var redirect_page = document.getElementById("jobs_bg");
             success.innerHTML="";
         },100)
         form.reset();
-        window.location.replace("works.html");
+        window.location.replace("works.php");
         redirect_page.style.display = "none";
         function autoRefresh() {
             window.location = window.location.href;
