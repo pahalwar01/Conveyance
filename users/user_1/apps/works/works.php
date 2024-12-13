@@ -81,7 +81,8 @@
                 <input type="text" name="to" placeholder="To" id="to" required="required">
                 <p id="add">Total K.M.</p>
                 <input type="number" name="km" placeholder="Total K.M." id="total_km" required="required">
-                <button id="submit_btn" name="submit">Submit</button>
+                <input type="submit"id="submit_btn" name="submit">
+                <!-- <button id="submit_btn" name="submit">Submit</button> -->
                 <button id="close_btn" name="close">Close</button><br>
                 <span id="success"></span>
             </form>
@@ -93,20 +94,33 @@
 
 <?php
 include '../../../../connection.php';
+?>
+
+<?php
 
 if(isset($_POST['submit']))
 {
-    $rname=$_POST['rname'];
-    $sname=$_POST['sender'];
-    $date=$_POST['date'];
-    $work=$_POST['work'];
-    $from=$_POST['from'];
-    $to=$_POST['to'];
-    $km=$_POST['km'];
-    $query="INSERT INTO rides(rname,sender,date,work,from,to,km) 
-            VALUES ('$rname','$sname','$date','$work','$from','$to','$km')";
+    $rname=$_GET['rname'];
+    $sname=$_GET['sender'];
+    $date=$_GET['date'];
+    $work=$_GET['work'];
+    $from=$_GET['from'];
+    $to=$_GET['to'];
+    $km=$_GET['km'];
+    $query="INSERT INTO rides(rname,sender,date,work,from,to,km) VALUES ('$rname','$sname','$date','$work','$from','$to','$km')";
     $send=mysqli_query($conn,$query);
+
+    if($send)
+    {
+        echo "Data Send Successfully into Database";
+    }
+    else 
+    {
+        echo "Data Sending Failed into Database";
+    }
+
 }
+
 
 ?>
 
