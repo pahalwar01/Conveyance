@@ -30,7 +30,7 @@
     <div class="row">
         <nav class="col-12">
             <ul>
-                <li class="col-6"><a href="../../user_1.html"><i class="fas fa-arrow-left"></i> Back</a></li>
+                <li class="col-6"><a href="../../user_1.php"><i class="fas fa-arrow-left"></i> Back</a></li>
                 <li class="col-6"><a href="#"><i class="fas fa-list"></i> Jobs View</a></li>
             </ul>
             
@@ -109,15 +109,6 @@ if(isset($_POST['submit']))
     $km=$_GET['km'];
     $query="INSERT INTO rides(rname,sender,date,work,from,to,km) VALUES ('$rname','$sname','$date','$work','$from','$to','$km')";
     $send=mysqli_query($conn,$query);
-
-    if($send)
-    {
-        echo "Data Send Successfully into Database";
-    }
-    else 
-    {
-        echo "Data Sending Failed into Database";
-    }
 
 }
 
