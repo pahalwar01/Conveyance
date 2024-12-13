@@ -16,5 +16,5 @@ var close = document.getElementById("close_btn");
 var add_job = document.getElementById("add_job");
 close.onclick = function()
 {
-    window.location.replace("works.html");
+    window.location.replace("works.php");
 }
