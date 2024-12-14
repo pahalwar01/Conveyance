@@ -9,21 +9,22 @@ $display =  "SELECT * FROM data where id='$id'";
 $rides = mysqli_query($conn, $display);
 
 $total = mysqli_num_rows($rides);
-$result = mysqli_fetch_assoc($rides)
+$result = mysqli_fetch_assoc($rides);
 ?>
 
 <?php
-if(isset($_GET['update']))
+if(isset($_POST['update']))
 {
-    $rname  =$_GET['rname'];
-    $sname  =$_GET['sender'];
-    $date   =$_GET['date'];
-    $work   =$_GET['work'];
-    $from   =$_GET['from'];
-    $to     =$_GET['to'];
-    $km     =$_GET['km'];
+    $rname  =$_POST['rname'];
+    $sname  =$_POST['sender'];
+    $date   =$_POST['date'];
+    $work   =$_POST['work'];
+    $from   =$_POST['from'];
+    $to     =$_POST['to'];
+    $km     =$_POST['km'];
 
-    $update = "UPDATE data set ('$rname','$sname','$date','$work','$from','$to','$km') where id='$id'";
+    // $update = "UPDATE data set ('$rname','$sname','$date','$work','$from','$to','$km') where id='$id'";
+    $update = "UPDATE data set rname='$rname',sender='$sname',date='$date',work='$work',from='$from',to='$to',km='$km' where id='$id'";
 
     $send=mysqli_query($conn,$update);
 
@@ -106,7 +107,7 @@ if(isset($_GET['update']))
         <center>
         <div id="add_job" class="animate__animated animate__slideInDown">
             <h1>Update Your Job</h1><br>
-            <form id="add_work" action="" method="POST">
+            <form id="add_work" action="#" method="POST">
             <!-- <form id="add_work" name="submit-to-google-sheet" method="POST"> -->
                 <p id="add">Your Name</p>
                 <input type="text" name="rname" value="<?php echo $result['rname']; ?>" placeholder="Type Your Name" id="ridername" required="required"></input>
@@ -233,8 +234,8 @@ if(isset($_GET['update']))
 </script>
     
 
-<script src="works/js/works.js"></script>
-<script type="module" src="works/js/addword.js"></script>     
+<!-- <script src="works/js/works.js"></script>
+<script type="module" src="works/js/addword.js"></script>      -->
 
 </body>
 </html>
