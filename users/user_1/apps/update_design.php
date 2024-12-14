@@ -1,10 +1,51 @@
+<?php
+include '../../../connection.php';
+?>
+
+<?php
+echo $_GET['id'];
+
+$display =  "SELECT * FROM data where id='$id'";
+$rides = mysqli_query($conn, $display);
+
+$total = mysqli_num_rows($rides);
+$result = mysqli_fetch_assoc($rides)
+
+?>
+
+<?php
+
+if(isset($_POST['submit']))
+{
+    $rname  =$_POST['rname'];
+    $sname  =$_POST['sender'];
+    $date   =$_POST['date'];
+    $work   =$_POST['work'];
+    $from   =$_POST['from'];
+    $to     =$_POST['to'];
+    $km     =$_POST['km'];
+
+    $query="INSERT INTO data values ('$id','$rname','$sname','$date','$work','$from','$to','$km')";
+    $send=mysqli_query($conn,$query);
+
+    if($send)
+    {
+        echo "Data inserted into database";
+        header("Location: works/works.php");
+    }
+    else{
+        echo "Failed";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jobs</title>
-    <link rel="stylesheet" href="css/works.css">
+    <link rel="stylesheet" href="works/css/works.css">
     <link rel="icon" type="image/x-icon" href="../../../../img/logo.png"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,14 +103,14 @@
     <a href="#"><i class="fas fa-plus-circle" id="addwork"></i></a>
 
 
-    <div id="jobs_bg" class="animate__animated animate__fadeIn">
+    <div id="jobs_bg" class="animate__animated animate__fadeIn" style='display:block'>
         <center>
         <div id="add_job" class="animate__animated animate__slideInDown">
-            <h1>Add New Job</h1><br>
+            <h1>Update Your Job</h1><br>
             <form id="add_work" action="../action.php" method="POST">
             <!-- <form id="add_work" name="submit-to-google-sheet" method="POST"> -->
                 <p id="add">Your Name</p>
-                <input type="text" name="rname" placeholder="Type Your Name" id="ridername" required="required"></input>
+                <input type="text" name="rname" value="<?php echo $result['rname']; ?>" placeholder="Type Your Name" id="ridername" required="required"></input>
                 <p id="add">Sender Name</p>
                 <input type="text" name="sender" placeholder="Sender Name" id="s_name" required="required">
                 <p id="add">Date</p>
@@ -82,9 +123,7 @@
                 <input type="text" name="to" placeholder="To" id="to" required="required">
                 <p id="add">Total K.M.</p>
                 <input type="number" name="km" placeholder="Total K.M." id="total_km" required="required">
-                <input type="submit"id="submit_btn" name="submit">
-                <!-- <button id="submit_btn" name="submit">Submit</button> -->
-                <button id="close_btn" name="close">Close</button><br>
+                <input type="submit"id="submit_btn" name="submit" value="Update">
                 <span id="success"></span>
             </form>
         </div>
@@ -92,12 +131,6 @@
     </div>
 
     <!--section coding end-->
-
-<?php
-include '../../../../connection.php';
-?>
-
-
 
 <script type="module">
 
@@ -208,8 +241,8 @@ include '../../../../connection.php';
 </script>
     
 
-<script src="js/works.js"></script>
-<script type="module" src="js/addword.js"></script>     
+<script src="works/js/works.js"></script>
+<script type="module" src="works/js/addword.js"></script>     
 
 </body>
 </html>
