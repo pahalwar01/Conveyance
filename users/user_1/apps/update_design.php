@@ -3,7 +3,7 @@ include '../../../connection.php';
 ?>
 
 <?php
-echo $_GET['id'];
+$id = $_GET['update_id'];
 
 $display =  "SELECT * FROM data where id='$id'";
 $rides = mysqli_query($conn, $display);
@@ -15,7 +15,7 @@ $result = mysqli_fetch_assoc($rides)
 
 <?php
 
-if(isset($_POST['submit']))
+if(isset($_POST['update']))
 {
     $rname  =$_POST['rname'];
     $sname  =$_POST['sender'];
@@ -25,13 +25,14 @@ if(isset($_POST['submit']))
     $to     =$_POST['to'];
     $km     =$_POST['km'];
 
-    $query="INSERT INTO data values ('$id','$rname','$sname','$date','$work','$from','$to','$km')";
-    $send=mysqli_query($conn,$query);
+    $update = "UPDATE data set ('$id','$rname','$sname','$date','$work','$from','$to','$km') where id='$id'";
+
+    $send=mysqli_query($conn,$update);
 
     if($send)
     {
-        echo "Data inserted into database";
-        header("Location: works/works.php");
+        echo "Data Updated Successfully";
+        // header("Location: works/works.php");
     }
     else{
         echo "Failed";
@@ -107,23 +108,23 @@ if(isset($_POST['submit']))
         <center>
         <div id="add_job" class="animate__animated animate__slideInDown">
             <h1>Update Your Job</h1><br>
-            <form id="add_work" action="../action.php" method="POST">
+            <form id="add_work" action="" method="POST">
             <!-- <form id="add_work" name="submit-to-google-sheet" method="POST"> -->
                 <p id="add">Your Name</p>
                 <input type="text" name="rname" value="<?php echo $result['rname']; ?>" placeholder="Type Your Name" id="ridername" required="required"></input>
                 <p id="add">Sender Name</p>
-                <input type="text" name="sender" placeholder="Sender Name" id="s_name" required="required">
+                <input type="text" name="sender" value="<?php echo $result['sender']; ?>" placeholder="Sender Name" id="s_name" required="required">
                 <p id="add">Date</p>
-                <Input type="date" name="date" placeholder="Date" id="date" required="required">
+                <Input type="date" name="date" value="<?php echo $result['date']; ?>" placeholder="Date" id="date" required="required">
                 <p id="add">Type Of Work</p>
-                <input type="text" name="work" placeholder="Work Type" id="work_type" required="required">
+                <input type="text" name="work" value="<?php echo $result['work']; ?>" placeholder="Work Type" id="work_type" required="required">
                 <p id="add">From:-</p>
-                <input type="text" name="from" placeholder="From" id="frm" required="required">
+                <input type="text" name="from" value="<?php echo $result['from']; ?>" placeholder="From" id="frm" required="required">
                 <p id="add">To:-</p>
-                <input type="text" name="to" placeholder="To" id="to" required="required">
+                <input type="text" name="to" value="<?php echo $result['to']; ?>" placeholder="To" id="to" required="required">
                 <p id="add">Total K.M.</p>
-                <input type="number" name="km" placeholder="Total K.M." id="total_km" required="required">
-                <input type="submit"id="submit_btn" name="submit" value="Update">
+                <input type="number" name="km" value="<?php echo $result['km']; ?>" placeholder="Total K.M." id="total_km" required="required">
+                <input type="submit"id="submit_btn" name="update" value="Update">
                 <span id="success"></span>
             </form>
         </div>
