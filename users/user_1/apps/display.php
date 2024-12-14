@@ -36,11 +36,12 @@ if($total != 0)
     <center>
     <table border="1" cellspacing="5" width="100%">
         <tr>
+        <th width="5%">ID</th>
         <th width="10%">Rider Name</th>
         <th width="10%">Sender Name</th>
         <th width="10%">Date</th>
         <th width="15%">Work Type</th>
-        <th width="15%">From</th>
+        <th width="20%">From</th>
         <th width="15%">To</th>
         <th width="10%">Total KM</th>
         <th width="15%">Operations</th>
@@ -50,6 +51,7 @@ if($total != 0)
     while ($result = mysqli_fetch_assoc($rides)) 
     {
         echo "<tr>
+                <td>".$result['id']."</td>
                 <td>".$result['rname']."</td>
                 <td>".$result['sender']."</td>
                 <td>".$result['date']."</td>
@@ -58,7 +60,7 @@ if($total != 0)
                 <td>".$result['to']."</td>
                 <td>".$result['km']."</td>
 
-                <td><a href='update_design.php'>Update</a></td>
+                <td><a href='update_design.php?update_id=$result[id]'>Update</a></td>
             </tr>
             ";
     }
