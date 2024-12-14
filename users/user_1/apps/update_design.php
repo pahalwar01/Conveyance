@@ -10,20 +10,18 @@ $rides = mysqli_query($conn, $display);
 
 $total = mysqli_num_rows($rides);
 $result = mysqli_fetch_assoc($rides)
-
 ?>
 
 <?php
-
-if(isset($_POST['update']))
+if(isset($_GET['update']))
 {
-    $rname  =$_POST['rname'];
-    $sname  =$_POST['sender'];
-    $date   =$_POST['date'];
-    $work   =$_POST['work'];
-    $from   =$_POST['from'];
-    $to     =$_POST['to'];
-    $km     =$_POST['km'];
+    $rname  =$_GET['rname'];
+    $sname  =$_GET['sender'];
+    $date   =$_GET['date'];
+    $work   =$_GET['work'];
+    $from   =$_GET['from'];
+    $to     =$_GET['to'];
+    $km     =$_GET['km'];
 
     $update = "UPDATE data set ('$rname','$sname','$date','$work','$from','$to','$km') where id='$id'";
 
@@ -32,7 +30,7 @@ if(isset($_POST['update']))
     if($send)
     {
         echo "Data Updated Successfully";
-        // header("Location: works/works.php");
+        header("Location: display.php");
     }
     else{
         echo "Failed";
@@ -229,13 +227,6 @@ if(isset($_POST['update']))
 
     signOutButton.addEventListener('click', userSignOut);
     
-
-    var close = document.getElementById("close_btn");
-    var add_job = document.getElementById("add_job");
-    close.onclick = function()
-    {
-        window.location.replace("works.php");
-    }
 
 
 
