@@ -25,7 +25,7 @@ if(isset($_POST['update']))
     $to     =$_POST['to'];
     $km     =$_POST['km'];
 
-    $update = "UPDATE data set ('$id','$rname','$sname','$date','$work','$from','$to','$km') where id='$id'";
+    $update = "UPDATE data set ('$rname','$sname','$date','$work','$from','$to','$km') where id='$id'";
 
     $send=mysqli_query($conn,$update);
 
