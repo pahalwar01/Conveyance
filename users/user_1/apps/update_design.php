@@ -1,8 +1,5 @@
 <?php
 include '../../../connection.php';
-?>
-
-<?php
 $id = $_GET['update_id'];
 
 $display =  "SELECT * FROM data where id='$id'";
@@ -10,9 +7,7 @@ $rides = mysqli_query($conn, $display);
 
 $total = mysqli_num_rows($rides);
 $result = mysqli_fetch_assoc($rides);
-?>
 
-<?php
 if(isset($_POST['update']))
 {
     $rname  =$_POST['rname'];
@@ -23,8 +18,8 @@ if(isset($_POST['update']))
     $to     =$_POST['to'];
     $km     =$_POST['km'];
 
-    // $update = "UPDATE data set ('$rname','$sname','$date','$work','$from','$to','$km') where id='$id'";
-    $update = "UPDATE data set rname='$rname',sender='$sname',date='$date',work='$work',from='$from',to='$to',km='$km' where id='$id'";
+    $update = "UPDATE data set ('$rname','$sname','$date','$work','$from','$to','$km') where id='$id'";
+    // $update = "UPDATE data set rname='$rname',sender='$sname',date='$date',work='$work',from='$from',to='$to',km='$km' where id='$id'";
 
     $send=mysqli_query($conn,$update);
 
