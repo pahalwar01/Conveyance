@@ -66,7 +66,7 @@
         <center>
         <div id="add_job" class="animate__animated animate__slideInDown">
             <h1>Add New Job</h1><br>
-            <form id="add_work" action="../user_1.php" method="POST">
+            <form id="add_work" action="works.php" method="POST">
             <!-- <form id="add_work" name="submit-to-google-sheet" method="POST"> -->
                 <p id="add">Your Name</p>
                 <input type="text" name="rname" placeholder="Type Your Name" id="ridername" required="required"></input>
@@ -115,7 +115,7 @@ if(isset($_POST['submit']))
     if($send)
     {
         echo "Data inserted into database";
-        header("Location: ../../user_1.php");
+        // header("Location: works.php");
     }
     else{
         echo "Failed";
