@@ -115,6 +115,7 @@ if(isset($_POST['submit']))
     if($send)
     {
         echo "Data inserted into database";
+        header("Location: ../../../../../user_1.php");
     }
     else{
         echo "Failed";
