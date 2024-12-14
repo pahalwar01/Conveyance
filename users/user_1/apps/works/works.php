@@ -66,7 +66,7 @@
         <center>
         <div id="add_job" class="animate__animated animate__slideInDown">
             <h1>Add New Job</h1><br>
-            <form id="add_work" action="#" method="POST">
+            <form id="add_work" action="works.php" method="POST">
             <!-- <form id="add_work" name="submit-to-google-sheet" method="POST"> -->
                 <p id="add">Your Name</p>
                 <input type="text" name="rname" placeholder="Type Your Name" id="ridername" required="required"></input>
@@ -99,7 +99,7 @@ include '../../../../connection.php';
 
 <?php
 
-if($_POST['submit'])
+if(isset($_POST['submit']))
 {
     $rname=$_POST['rname'];
     $sname=$_POST['sender'];
