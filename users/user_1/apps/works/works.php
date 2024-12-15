@@ -73,13 +73,13 @@
                 <p id="add">Sender Name</p>
                 <input type="text" name="sender" placeholder="Sender Name" id="s_name" required="required">
                 <p id="add">Date</p>
-                <Input type="date" name="date" placeholder="Date" id="date" required="required">
+                <Input type="date" name="wdate" placeholder="Date" id="date" required="required">
                 <p id="add">Type Of Work</p>
                 <input type="text" name="work" placeholder="Work Type" id="work_type" required="required">
                 <p id="add">From:-</p>
-                <input type="text" name="from" placeholder="From" id="frm" required="required">
+                <input type="text" name="startfrom" placeholder="From" id="frm" required="required">
                 <p id="add">To:-</p>
-                <input type="text" name="to" placeholder="To" id="to" required="required">
+                <input type="text" name="endto" placeholder="To" id="to" required="required">
                 <p id="add">Total K.M.</p>
                 <input type="number" name="km" placeholder="Total K.M." id="total_km" required="required">
                 <input type="submit"id="submit_btn" name="submit">
