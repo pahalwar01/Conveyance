@@ -54,10 +54,10 @@ if($total != 0)
                 <td>".$result['id']."</td>
                 <td>".$result['rname']."</td>
                 <td>".$result['sender']."</td>
-                <td>".$result['date']."</td>
+                <td>".$result['wdate']."</td>
                 <td>".$result['work']."</td>
-                <td>".$result['from']."</td>
-                <td>".$result['to']."</td>
+                <td>".$result['startfrom']."</td>
+                <td>".$result['endto']."</td>
                 <td>".$result['km']."</td>
 
                 <td><a href='update_design.php?update_id=$result[id]'>Update</a></td>
