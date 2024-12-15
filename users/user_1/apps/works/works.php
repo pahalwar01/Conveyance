@@ -1,3 +1,6 @@
+<?php
+include '../../../../connection.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,6 +59,12 @@
         <div id="lalit" style="display: none;">
             <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pubhtml?gid=549043537&amp;single=true&amp;widget=true&amp;headers=false" style="width: 100%; height: 720px;"></iframe>
         </div>
+
+        <div id="mirchitasks" style="display: none;">
+        
+            
+            
+        </div>
         
     </div>
 
@@ -93,9 +102,7 @@
 
     <!--section coding end-->
 
-<?php
-include '../../../../connection.php';
-?>
+
 
 
 
@@ -133,6 +140,9 @@ include '../../../../connection.php';
     const dharampal = document.getElementById("dharampal");
     const karan = document.getElementById("karan");
     const lalit = document.getElementById("lalit");
+    const mirchitasks = document.getElementById("mirchitasks");
+
+    
     
     // signOutButton.style.display = "none";
     // message.style.display = "none";
@@ -174,7 +184,13 @@ include '../../../../connection.php';
                 if(userName.innerHTML == "Lalit kumar"){
                 lalit.style.display = "block";
                 rider_name.value = user.displayName;
-                };
+                }
+                else{
+                    if(userName.innerHTML == "Mirchi Tasks"){
+                    mirchitasks.style.display = "block";
+                    rider_name.value = user.displayName;
+                    }
+                }
             }
         }
         
