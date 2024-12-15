@@ -59,6 +59,71 @@
                     <div id="lalit_details" style="display: none;">
                         <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR7woZy9d8HSFhhdTebakHbzs27ZeYZmEpvr85jmyx_d2xb0ddWFGgn8G3-DwZxKHbeRa8nCvCgiGOp/pubhtml?gid=1767430356&amp;single=true&amp;widget=true&amp;headers=false" style="width: 230px; height: 200px;"></iframe>
                     </div>
+<!-- for testing-->
+                    <div id="rohit_details">
+                        
+                        <?php
+                        include '../../connection.php';
+                        error_reporting(0);
+                        ?>
+
+                        <?php
+
+                        $display =  "SELECT * FROM data";
+                        $rides = mysqli_query($conn, $display);
+
+                        $total = mysqli_num_rows($rides);
+
+                        // echo $total;
+
+                        if($total != 0)
+                        {
+                            ?>
+
+                            <h2 align="center"><mark>Displaying All Records</mark></h2>
+                            <center>
+                            <table border="1" cellspacing="5" width="100%">
+                                <tr>
+                                <th width="5%">ID</th>
+                                <th width="10%">Rider Name</th>
+                                <th width="10%">Sender Name</th>
+                                <th width="10%">Date</th>
+                                <th width="15%">Work Type</th>
+                                <th width="20%">From</th>
+                                <th width="15%">To</th>
+                                <th width="10%">Total KM</th>
+                                <th width="15%">Operations</th>
+                                </tr>
+                            
+                            <?php
+                            while ($result = mysqli_fetch_assoc($rides)) 
+                            {
+                                echo "<tr>
+                                        <td>".$result['id']."</td>
+                                        <td>".$result['rname']."</td>
+                                        <td>".$result['sender']."</td>
+                                        <td>".$result['wdate']."</td>
+                                        <td>".$result['work']."</td>
+                                        <td>".$result['startfrom']."</td>
+                                        <td>".$result['endto']."</td>
+                                        <td>".$result['km']."</td>
+
+                                        <td><a href='update_design.php?update_id=$result[id]'>Update</a></td>
+                                    </tr>
+                                    ";
+                            }
+                                }
+                                else
+                                {
+                                    echo "No records found";
+                                }
+
+                                ?>
+                            </table>
+                            </center>
+
+                    </div>
+
                 </div>
                     <!-- admin view panel -->
                     <div class="row" id="admin" style="display: none;">
@@ -98,11 +163,6 @@
     </section>
 
 
-<?php
-include '../../connection.php';
-?>
-
-
 <script type="module">
   
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
@@ -137,6 +197,7 @@ include '../../connection.php';
     const dharampal = document.getElementById("dharampal_details");
     const karan = document.getElementById("karan_details");
     const lalit = document.getElementById("lalit_details");
+    const rohit = document.getElementById("rohit_details");
     const admin = document.getElementById("admin");
     const rider = document.getElementById("rider");
     const jobview = document.getElementById("jobview");
@@ -188,6 +249,11 @@ include '../../connection.php';
                             rider.style.display="none";
                             jobview.style.display="none";
                             logout.style.float="right";
+                        }
+                        else{
+                            if(userName.innerHTML == "Mirchi Tasks"){
+                                rohit.style.display = "block";
+                            }
                         }
                     }
                 }
