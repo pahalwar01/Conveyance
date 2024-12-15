@@ -15,6 +15,20 @@ if(isset($_POST['submit']))
     $to     =$_POST['endto'];
     $km     =$_POST['km'];
 
+    // if($rname=="Dharam Pal"){
+    //     $query="INSERT INTO dharampal values ('$id','$rname','$sname','$date','$work','$from','$to','$km')";
+    // $send=mysqli_query($conn,$query);
+
+    // if($send)
+    // {
+    //     echo "Data inserted into database";
+    //     header("Location: works/works.php");
+    // }
+    // else{
+    //     echo "Failed";
+    // }
+    // }
+
     $query="INSERT INTO data values ('$id','$rname','$sname','$date','$work','$from','$to','$km')";
     $send=mysqli_query($conn,$query);
 
