@@ -64,12 +64,12 @@ if($total != 0)
             </tr>
             ";
     }
-}
-else
-{
-    echo "No records found";
-}
+        }
+        else
+        {
+            echo "No records found";
+        }
 
-?>
-</table>
-</center>
+        ?>
+    </table>
+    </center>
