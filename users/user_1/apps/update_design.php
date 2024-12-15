@@ -7,21 +7,24 @@ $rides = mysqli_query($conn, $display);
 
 $total = mysqli_num_rows($rides);
 $result = mysqli_fetch_assoc($rides);
+?>
 
+<?php
 if(isset($_POST['update']))
 {
     $rname  =$_POST['rname'];
     $sname  =$_POST['sender'];
-    $date   =$_POST['date'];
+    $date   =$_POST['wdate'];
     $work   =$_POST['work'];
-    $from   =$_POST['from'];
-    $to     =$_POST['to'];
+    $from   =$_POST['startfrom'];
+    $to     =$_POST['endto'];
     $km     =$_POST['km'];
 
-    $update = "UPDATE data set ('$rname','$sname','$date','$work','$from','$to','$km') where id='$id'";
+    // $update = "UPDATE data set ('$rname','$sname','$date','$work','$from','$to','$km') where id='$id'";
     // $update = "UPDATE data set rname='$rname',sender='$sname',date='$date',work='$work',from='$from',to='$to',km='$km' where id='$id'";
+    $query = "UPDATE data set rname='$rname',sender='$sname',wdate='$date',work='$work',startfrom='$from',endto='$to',km='$km' WHERE id='$id'";
 
-    $send=mysqli_query($conn,$update);
+    $send=mysqli_query($conn,$query);
 
     if($send)
     {
@@ -109,13 +112,13 @@ if(isset($_POST['update']))
                 <p id="add">Sender Name</p>
                 <input type="text" name="sender" value="<?php echo $result['sender']; ?>" placeholder="Sender Name" id="s_name" required="required">
                 <p id="add">Date</p>
-                <Input type="date" name="date" value="<?php echo $result['date']; ?>" placeholder="Date" id="date" required="required">
+                <Input type="date" name="wdate" value="<?php echo $result['wdate']; ?>" placeholder="Date" id="date" required="required">
                 <p id="add">Type Of Work</p>
                 <input type="text" name="work" value="<?php echo $result['work']; ?>" placeholder="Work Type" id="work_type" required="required">
                 <p id="add">From:-</p>
-                <input type="text" name="from" value="<?php echo $result['from']; ?>" placeholder="From" id="frm" required="required">
+                <input type="text" name="startfrom" value="<?php echo $result['startfrom']; ?>" placeholder="From" id="frm" required="required">
                 <p id="add">To:-</p>
-                <input type="text" name="to" value="<?php echo $result['to']; ?>" placeholder="To" id="to" required="required">
+                <input type="text" name="endto" value="<?php echo $result['endto']; ?>" placeholder="To" id="to" required="required">
                 <p id="add">Total K.M.</p>
                 <input type="number" name="km" value="<?php echo $result['km']; ?>" placeholder="Total K.M." id="total_km" required="required">
                 <input type="submit"id="submit_btn" name="update" value="Update">
