@@ -15,19 +15,30 @@ if(isset($_POST['submit']))
     $to     =$_POST['endto'];
     $km     =$_POST['km'];
 
-    // if($rname=="Dharam Pal"){
-    //     $query="INSERT INTO dharampal values ('$id','$rname','$sname','$date','$work','$from','$to','$km')";
-    // $send=mysqli_query($conn,$query);
+    //DHARAMPAL DATA SEPRATE
 
-    // if($send)
-    // {
-    //     echo "Data inserted into database";
-    //     header("Location: works/works.php");
-    // }
-    // else{
-    //     echo "Failed";
-    // }
-    // }
+    if($rname=="Dharam Pal"){
+        $query="INSERT INTO dharampal values ('$id','$rname','$sname','$date','$work','$from','$to','$km')";
+    $send=mysqli_query($conn,$query);
+
+    if($send)
+    {
+        echo "Data inserted into database";
+        header("Location: works/works.php");
+    }
+    else{
+        echo "Failed";
+    }
+    }
+
+    //KARAN DATA SEPRATE
+
+
+
+
+    //LALIT DATA SEPRATE
+
+
 
     $query="INSERT INTO data values ('$id','$rname','$sname','$date','$work','$from','$to','$km')";
     $send=mysqli_query($conn,$query);
