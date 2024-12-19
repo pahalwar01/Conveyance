@@ -32,36 +32,36 @@ if(isset($_POST['submit']))
     }
 
     //KARAN DATA SEPRATE
-    if($rname=="Dharam Pal"){
-        $query="INSERT INTO dharampal values ('$id','$rname','$sname','$date','$work','$from','$to','$km')";
-    $send=mysqli_query($conn,$query);
+    // if($rname=="#"){
+    //     $query="INSERT INTO dharampal values ('$id','$rname','$sname','$date','$work','$from','$to','$km')";
+    // $send=mysqli_query($conn,$query);
 
-    if($send)
-    {
-        echo "Data inserted into database";
-        header("Location: works/works.php");
-    }
-    else{
-        echo "Failed";
-    }
-    }
+    // if($send)
+    // {
+    //     echo "Data inserted into database";
+    //     header("Location: works/works.php");
+    // }
+    // else{
+    //     echo "Failed";
+    // }
+    // }
 
 
 
-    //LALIT DATA SEPRATE
-    if($rname=="Dharam Pal"){
-        $query="INSERT INTO dharampal values ('$id','$rname','$sname','$date','$work','$from','$to','$km')";
-    $send=mysqli_query($conn,$query);
+    // //LALIT DATA SEPRATE
+    // if($rname=="#"){
+    //     $query="INSERT INTO dharampal values ('$id','$rname','$sname','$date','$work','$from','$to','$km')";
+    // $send=mysqli_query($conn,$query);
 
-    if($send)
-    {
-        echo "Data inserted into database";
-        header("Location: works/works.php");
-    }
-    else{
-        echo "Failed";
-    }
-    }
+    // if($send)
+    // {
+    //     echo "Data inserted into database";
+    //     header("Location: works/works.php");
+    // }
+    // else{
+    //     echo "Failed";
+    // }
+    // }
 
     //..//..//..//..//..//..//..//..//..//..//..//..//..//..//..//..//..//..//..//..//..//..//..//..//..//..//..//..//..//..
 
